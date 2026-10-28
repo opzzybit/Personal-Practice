@@ -57,26 +57,31 @@ public class PlayerAttributes{
     
     
     System.out.println();
-    System.out.println("\tEDIT THE PLAYER (OR 'Yes' TO  EIXT TO THE GAME)");
     Scanner input = new Scanner(System.in);
     
     while(true){
-    System.out.println("Enter option Yes or No :");
-    String exitinput = input.nextLine();
-    if (exitinput.equalsIgnoreCase("yes")){
+    System.out.println();
+    System.out.println("\t\t  EDIT THE PLAYER OR EXIT TO THE GAME ");
+    System.out.println();
+    System.out.println("Enter option 02: exit , 01: continue");
+    int exitinput = input.nextInt();
+    if (exitinput == 02){
         System.out.println("Back to game!!!!");
         break;
     }
-    else{
-        
+    else if(exitinput == 01){
         System.out.println("let go !!!");
     }
-    
+    else{
+        System.out.println("option not found ");
+        continue;
+    }
     
     System.out.println();
     System.out.println("Enter the player name:");
     String username = input.nextLine();
     newAttribute2.setName(username);
+    input.nextLine();
     
     System.out.println("Enter the complexion: ");
     String usercolor = input.nextLine();
@@ -142,7 +147,6 @@ public class PlayerAttributes{
    System.out.println("DEFEND RATE: " + newAttribute2.getaddDefendRate() + " out of 100");
    System.out.println();
    System.out.println("DRIBBLING RATE: " + newAttribute2.getDribbling() + " out of 100");
-   break;
   }  
   
 }
